@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #000000;
+  --foreground: #22c55e;
 }
 
 @theme inline {
@@ -23,4 +23,198 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+.typing-animation {
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid #22c55e;
+  animation: typing 2s steps(20, end),
+    blink-caret 0.75s step-end infinite;
+}
+
+@keyframes blink-caret {
+
+  from,
+  to {
+    border-color: transparent;
+  }
+
+  50% {
+    border-color: #22c55e;
+  }
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+@keyframes matrix-rain {
+  0% {
+    transform: translateY(-100%);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+}
+
+.matrix-digit {
+  color: #22c55e;
+  font-family: monospace;
+  font-size: 0.8rem;
+  line-height: 1;
+  text-shadow: 0 0 3px #22c55e;
+  opacity: 0.8;
+}
+
+.matrix-digit.bright {
+  color: #ffffff;
+  text-shadow: 0 0 5px #22c55e;
+  opacity: 1;
+}
+
+@keyframes glitch {
+  0% {
+    transform: translate(0);
+    text-shadow: 0 0 0 #00ff00;
+  }
+
+  20% {
+    transform: translate(-2px, 2px);
+    text-shadow: 2px 2px #00ff00;
+  }
+
+  40% {
+    transform: translate(-2px, -2px);
+    text-shadow: 2px -2px #00ff00;
+  }
+
+  60% {
+    transform: translate(2px, 2px);
+    text-shadow: -2px 2px #00ff00;
+  }
+
+  80% {
+    transform: translate(2px, -2px);
+    text-shadow: -2px -2px #00ff00;
+  }
+
+  100% {
+    transform: translate(0);
+    text-shadow: 0 0 0 #00ff00;
+  }
+}
+
+.animate-glitch {
+  animation: glitch 0.3s ease-in-out infinite;
+}
+
+@keyframes shake {
+
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  25% {
+    transform: translateX(-5px);
+  }
+
+  75% {
+    transform: translateX(5px);
+  }
+}
+
+.animate-shake {
+  animation: shake 0.2s ease-in-out 3;
+}
+
+@keyframes pulse {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 1s ease-in-out infinite;
+}
+
+@keyframes pulse-fast {
+
+  0%,
+  100% {
+    opacity: 1;
+    border-color: rgba(34, 197, 94, 0.3);
+  }
+
+  50% {
+    opacity: 0.8;
+    border-color: rgba(168, 85, 247, 0.5);
+  }
+}
+
+.animate-pulse-fast {
+  animation: pulse-fast 0.5s ease-in-out infinite;
+}
+
+.progress-bar {
+  background: linear-gradient(90deg,
+      rgba(34, 197, 94, 0.2) 0%,
+      rgba(34, 197, 94, 0.4) 50%,
+      rgba(34, 197, 94, 0.2) 100%);
+  background-size: 200% 100%;
+  animation: gradient-shift 2s linear infinite;
+}
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 100% 0;
+  }
+
+  100% {
+    background-position: -100% 0;
+  }
+}
+
+.matrix-rainbow {
+  animation: hue-rotate 10s linear infinite;
+}
+
+@keyframes hue-rotate {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+
+  100% {
+    filter: hue-rotate(360deg);
+  }
 }
