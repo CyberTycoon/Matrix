@@ -17,7 +17,7 @@ const MatrixRain = () => {
             id: Math.random(),
             x: Math.round(x), // Round x position to ensure straight lines
             y: Math.random() * -100, // Start above screen
-            speed: 3 + Math.random() * 5, // Increased base speed and variation
+            speed: 3 + Math.random() * 4, // Increased base speed and variation
             bright: Math.random() > 0.8,
             value: Math.floor(Math.random() * 10),
         });
